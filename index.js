@@ -1,9 +1,10 @@
-const port = 4000;
-const express = require("express");
-const graphqlHTTP = require("express-graphql");
-const app = express();
-const schema = require("./schema");
+const { ApolloServer } = require("apollo-server");
+const url = "http://localhost:4000";
 
-app.use("/graphql", graphqlHTTP({ schema, graphiql: true }));
+const { typeDefs, resolvers } = require("./graphql");
+const server = new ApolloServer({ typeDefs, resolvers });
 
-app.listen(port, console.log(`server listenning on port ${port}`));
+// The `listen` method launches a web server.
+server.listen().then(({ url }) => {
+  console.log(`🚀  Server ready at ${url}`);
+});
