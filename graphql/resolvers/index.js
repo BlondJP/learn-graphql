@@ -5,6 +5,12 @@ const rootValue = {
   Query: {
     ...author.Query,
     ...book.Query
+  },
+  Book: {
+    ...book.Book
+  },
+  Author: {
+    ...author.Author
   }
 };
 
