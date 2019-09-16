@@ -6,6 +6,11 @@ module.exports = {
     author: (parent, args) => authors.find(({ id }) => args.id === id),
     authors: () => authors
   },
+  Mutation: {
+    addAuthor: (parent, args) => {
+      console.log(parent, args);
+    }
+  },
   Author: {
     name: ({ name }, args) => name,
     age: ({ age }, args) => age,
