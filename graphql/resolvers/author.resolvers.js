@@ -1,4 +1,4 @@
-const authors = require("../fixtures/authors");
+const authors = require("../../fixtures/authors");
 
 module.exports = {
   Query: {

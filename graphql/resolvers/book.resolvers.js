@@ -1,4 +1,4 @@
-const books = require("../fixtures/books");
+const books = require("../../fixtures/books");
 
 module.exports = {
   Query: {
