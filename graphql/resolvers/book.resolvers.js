@@ -32,7 +32,6 @@ module.exports = {
     genre: ({ genre }, args) => genre,
     author: ({ author_id }, args) => {
       const author = authors.find(({ id }) => id === author_id);
-      console.log("author", author);
       return author;
     }
   }
