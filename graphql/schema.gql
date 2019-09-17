@@ -8,6 +8,7 @@ type Query {
 type Mutation {
   addBook(name: String, genre: String): Book
   updateBook(id: ID, name: String, genre: String): Book
+  deleteBook(id: ID): Book
 }
 
 type Author {

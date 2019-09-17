@@ -1,5 +1,5 @@
-const books = require("../../fixtures/books");
-const authors = require("../../fixtures/authors");
+let books = require("../../fixtures/books");
+let authors = require("../../fixtures/authors");
 const uuidv1 = require("uuid/v1");
 
 module.exports = {
@@ -17,6 +17,11 @@ module.exports = {
       const book = books.find(book => book.id === id);
       book["name"] = name;
       book["genre"] = genre;
+      return book;
+    },
+    deleteBook: (parent, { id }) => {
+      const book = books.find(book => book.id === id);
+      books = books.filter(({ id }) => book.id !== id);
       return book;
     }
   },
