@@ -16,8 +16,8 @@ module.exports = {
     },
     updateAuthor: (parent, { id, name, age }) => {
       const author = authors.find(author => author.id === id);
-      author["name"] = name;
-      author["age"] = age;
+      name ? (author["name"] = name) : null;
+      age ? (author["age"] = age) : null;
       return author;
     },
     deleteAuthor: (parent, { id }) => {

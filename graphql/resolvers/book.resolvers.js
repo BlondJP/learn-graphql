@@ -14,10 +14,11 @@ module.exports = {
       books.push(book);
       return book;
     },
-    updateBook: (parent, { id, name, genre }) => {
+    updateBook: (parent, { id, name, genre, authorId }) => {
       const book = books.find(book => book.id === id);
-      book["name"] = name;
-      book["genre"] = genre;
+      name ? (book["name"] = name) : null;
+      genre ? (book["genre"] = genre) : null;
+      authorId ? (book["author_id"] = authorId) : null;
       return book;
     },
     deleteBook: (parent, { id }) => {
