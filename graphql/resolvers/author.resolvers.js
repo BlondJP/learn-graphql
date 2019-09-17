@@ -19,6 +19,11 @@ module.exports = {
       author["name"] = name;
       author["age"] = age;
       return author;
+    },
+    deleteAuthor: (parent, { id }) => {
+      const author = authors.find(author => author.id === id);
+      authors = authors.filter(author => author.id !== id);
+      return author;
     }
   },
   Author: {
