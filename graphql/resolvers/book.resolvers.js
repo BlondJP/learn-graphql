@@ -12,6 +12,12 @@ module.exports = {
       const book = { id: uuidv1(), name, genre };
       books.push(book);
       return book;
+    },
+    updateBook: (parent, { id, name, genre }) => {
+      const book = books.find(book => book.id === id);
+      book["name"] = name;
+      book["genre"] = genre;
+      return book;
     }
   },
   Book: {
