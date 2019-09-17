@@ -8,6 +8,7 @@ module.exports = {
     books: () => books
   },
   Mutation: {
+    // parent, args, context
     addBook: (parent, { name, genre }) => {
       const book = { id: uuidv1(), name, genre };
       books.push(book);

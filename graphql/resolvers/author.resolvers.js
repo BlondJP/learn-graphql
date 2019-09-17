@@ -1,5 +1,6 @@
-const authors = require("../../fixtures/authors");
-const books = require("../../fixtures/books");
+let authors = require("../../fixtures/authors");
+let books = require("../../fixtures/books");
+const uuidv1 = require("uuid/v1");
 
 module.exports = {
   Query: {
@@ -7,8 +8,17 @@ module.exports = {
     authors: () => authors
   },
   Mutation: {
-    addAuthor: (parent, args) => {
-      console.log(parent, args);
+    // parent, args, context
+    addAuthor: (parent, { name, age }) => {
+      const author = { id: uuidv1(), name, age };
+      authors.push(author);
+      return author;
+    },
+    updateAuthor: (parent, { id, name, age }) => {
+      const author = authors.find(author => author.id === id);
+      author["name"] = name;
+      author["age"] = age;
+      return author;
     }
   },
   Author: {

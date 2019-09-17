@@ -9,6 +9,9 @@ type Mutation {
   addBook(name: String, genre: String): Book
   updateBook(id: ID, name: String, genre: String): Book
   deleteBook(id: ID): Book
+
+  addAuthor(name: String, age: Int): Author
+  updateAuthor(id: ID, name: String, age: Int): Author
 }
 
 type Author {

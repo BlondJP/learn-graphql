@@ -7,7 +7,8 @@ const rootValue = {
     ...book.Query
   },
   Mutation: {
-    ...book.Mutation
+    ...book.Mutation,
+    ...author.Mutation
   },
   Book: {
     ...book.Book
