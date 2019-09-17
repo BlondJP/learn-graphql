@@ -23,8 +23,10 @@ http://localhost:4000
 ## Available Requests
 
 ```
-books {
-    name
-    genre
+{
+    books {
+        name
+        genre
+    }
 }
 ```
